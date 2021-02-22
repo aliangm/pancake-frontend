@@ -14,7 +14,6 @@ type State = {
   [key: string]: boolean
 }
 
-
 const NftList = () => {
   const [claimableNfts, setClaimableNfts] = useState<State>({})
   const { nfts: nftTokenIds, refresh } = useGetWalletNfts()
@@ -29,7 +28,7 @@ const NftList = () => {
           nfts.map((nft) => ({
             address: getBunnySpecialAddress(),
             name: 'canClaimSingle',
-            params: [walletAddress, nft.bunnyId]
+            params: [walletAddress, nft.bunnyId],
           })),
         )) as boolean[]
 
